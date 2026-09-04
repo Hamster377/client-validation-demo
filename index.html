@@ -1,43 +1,86 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Validation</title>
+    <title>Registration Form</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
     <div class="container">
         <h1>Registration Form</h1>
+        <p class="subtitle">Create your account</p>
+
         <form id="form">
+
             <div class="group">
-                <label>Full Name</label>
-                <input type="text" id="name" required>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name">
                 <span class="error" id="nameErr"></span>
             </div>
 
             <div class="group">
-                <label>Email</label>
-                <input type="email" id="email" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
                 <span class="error" id="emailErr"></span>
             </div>
 
             <div class="group">
-                <label>Password</label>
-                <input type="password" id="password" required>
+                <label for="password">Password</label>
+
+                <div class="password-box">
+                    <input type="password" id="password" placeholder="Enter password">
+                    <button type="button" id="togglePassword">👁️</button>
+                </div>
+
+                <div class="strength">
+                    <div id="strengthBar"></div>
+                </div>
+
                 <span class="error" id="passErr"></span>
             </div>
 
             <div class="group">
-                <label>Phone</label>
-                <input type="tel" id="phone" required>
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" placeholder="Enter phone number">
                 <span class="error" id="phoneErr"></span>
             </div>
 
-            <button type="submit">Submit</button>
+            <button type="submit" class="submit-btn">
+                Register
+            </button>
+
         </form>
-        <div id="success" class="success" style="display:none">✓ Form submitted!</div>
     </div>
+
+
+    <!-- Success Popup -->
+    <div class="popup-overlay" id="popup">
+
+        <div class="popup">
+
+            <div class="checkmark">✓</div>
+
+            <h2>Registration Successful!</h2>
+
+            <p>
+                Your account has been registered successfully.
+            </p>
+
+            <button id="closePopup">
+                Continue
+            </button>
+
+        </div>
+
+    </div>
+
+
     <script src="validate.js"></script>
+
 </body>
 </html>
+```
